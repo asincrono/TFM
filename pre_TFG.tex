@@ -1,0 +1,75 @@
+\documentclass[a4paper, twoside, titlepage, 12pt]{article}
+% Comenzamos a añadir paquetes:
+
+\usepackage{polyglossia}
+\setmainlanguage{spanish}
+%\setdefaultlanguage{galician}
+% \setdefaultlanguage{galician} % Esto es idéntico a escribir la linea anterior ¯\_(ツ)_/¯
+% Cambia cosas típicas de cada idioma como: «chapter», «section», «figure», «author»... por «capítulo», «sección», «figura», «autor»...
+
+\usepackage{fontspec}
+%\setmainfont[Ligatures=TeX]{Linux Biolinum O}
+% \setmainfont[Ligatures=TeX]{Linux Libertine O} % El nombre de la fuente en OS X.
+\setmainfont[Ligatures=TeX]{Linux Libertine} % El nombre de la fuente en Windows.
+
+\usepackage{setspace}
+\spacing{1.5}
+
+\usepackage{blindtext} % Para generar texto de relleno.
+
+\usepackage{tocloft} % Para tunear la tabla de contenidos.
+
+% Este paquete incluye los logos de XeLaTeX y otros.
+\usepackage{metalogo}
+
+% Este paquete vale para hacer tablas estilo libro "serio".
+\usepackage{booktabs}
+
+% Este paquete es el que utilizamos para incluir imágenes en el documento.
+\usepackage{graphicx}
+
+% Este paquete se emplea para la gestión de hyperlinks dentro del documento: el índice apunta a cada capítulo, sección, etc., insertar urls externas dentro del documento, etc.
+%\usepackage[hyperref, xetex, svgnames]{xcolor} % Distintos nombres para colores.
+\usepackage[hyperref, xetex, dvipsnames]{xcolor} % svgnames ofrence uno cto. de nombres y dvipsnames otro.
+\usepackage{hyperref}
+\hypersetup{ % Nos permite especificar los colores con que se mostrarán los distintos tipos de link dentro del documento.
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,
+    urlcolor=cyan,
+    citecolor=BlueViolet
+}
+
+%\usepackage{biblatex} % Bibliografía
+%\addbibresource{biblio.bib} % Archivo con las entradas de bibliografía.
+\usepackage{apacite} % Bibliografía con normas APA.
+
+% Este paquete permite que las tablas tengan gran cantidad de texto en una celda (entre otras muchas cosas)
+\usepackage{tabularx}
+
+\usepackage{titling} % Para hacer referencia al título y al autor en la portada.
+
+% Esto se usará en la página del título (al usar \maketitle).
+\title{Mi mini manual de \XeLaTeX}
+\author{Manuel C. Piñeiro Mourazos}
+
+\begin{document}
+\begin{titlepage}
+  \centering
+	\includegraphics[width=0.25\textwidth]{images/escudo_uvigo}\par\vspace{1cm}
+	\includegraphics[width=\textwidth]{images/Logotipo_negro_UNIVERSIDADE_DE_VIGO}\par\vspace{1cm}
+	{\scshape\Large Pre-trabajo de Fin de Grado\par}
+	\vspace{1.5cm}
+	{\huge\bfseries Educación con Evidencias\par}
+	\vspace{2cm}
+	{\Large\itshape \theauthor\par}
+	\vfill
+% Bottom of the page
+	{\large \today\par}
+\end{titlepage}
+
+\tableofcontents % La tabla de contenidos
+%\listoffigures % La lista de imágenes (descomentar si tienes y quieres que salgan).
+%\listoftables % La lista de tablas (descomentar si tienes y quieres que salgan).
+
+\end{document}
