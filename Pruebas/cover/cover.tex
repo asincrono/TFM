@@ -1,0 +1,132 @@
+
+\documentclass[a4paper,12pt]{scrartcl}
+\usepackage{fontspec}
+\setmainfont{Linux Libertine O}
+\setsansfont{Linux Biolinum O}
+\setmonofont{Linux Libertine Mono O}
+\newfontface\scbflinux{Linux Libertine Capitals Bold}
+
+\usepackage{polyglossia}
+\setmainlanguage{spanish}
+\PolyglossiaSetup{spanish}{indentfirst=false}
+
+\usepackage{graphicx}
+
+\usepackage{enumitem}
+
+% \usepackage{showframe} % Para mostra los bordes de los bloques de la página.
+% \usepackage{realboxes} % Para usar '\Fbox{}' para crear cajas y visibilizar minpages.
+
+\makeatletter % Necesario para trastear con '@'. Finaliza con '\makeatother'.
+\newcommand{\location}[1]{\def\@location {#1}}
+\newcommand{\thelocation}{\@location}
+%\def\thelocation{\@location}
+\newcommand{\certification}[1]{\def\@certification {#1}}
+\newcommand{\thecertification}{\@certification}
+% \def\thecertification{\@certification}
+%\newcommand{\faculty}{Facultad de Biología}
+\newcommand{\faculty}[1]{\def\@faculty {#1}}
+\newcommand{\thefaculty}{\@faculty}
+
+\newcommand{\campus}[1]{\def\@campus {#1}}
+\newcommand{\theCampus}{Campus de \@campus}
+
+% Nombre de la institución donde se realizaron las prácticas.
+\newcommand{\institution}[1]{\def\@institution {#1}}
+\newcommand{\theinstitution}{\@institution}
+
+% El nombre del tutor externo.
+\newcommand{\extTuthor}[1]{\def\@exTuthor {#1}}
+\newcommand{\theExtTuthor}{\@exTuthor}
+
+% El nombre del tutor de la universidad.
+\newcommand{\uniTuthor}[1]{\def\@uniTuthor {#1}}
+\newcommand{\theUniTuthor}{\@uniTuthor}
+
+% El curso académico
+\newcommand{\acadYear}[2]{\def\@acadYear {#1-#2}}
+\newcommand{\theAcadYear}{\@acadYear}
+
+\location{Vigo}
+
+\campus{Vigo}
+
+\certification{Máster universitario en formación del profesorado de educación secundaria y bachillerato, formación profesional y enseñanzas de idiomas}
+
+\faculty{Facultad de biología}
+
+\acadYear{2017}{2018}
+
+\institution{Amor}
+
+\extTuthor{Pablo Eiras Vázquez}
+
+\uniTuthor{D. Juan Nadie de Nadie}
+
+\newcommand{\makeCover}{
+\begin{titlepage}
+  \centering
+  \includegraphics[width=0.25\textwidth]{../images/escudo_uvigo}\par\vspace{0.5cm}
+  \includegraphics[width=0.80\textwidth]{../images/Logotipo_negro_UNIVERSIDADE_DE_VIGO}\par
+  % \vspace{0.5cm}
+  {\scshape\Large\thecertification\par}
+  % {\scbflinux\Large\thecertification\par}
+  \vspace{0.5cm}
+  {\thefaculty\par}
+  \vspace{0.5cm}
+  {\Large \theAcadYear\par}
+  \vspace{0.25cm}
+  {\huge\bfseries Memoria de prácticas\par}
+  \vspace{0.25cm}
+  {\normalsize \theCampus\par}
+  \vspace{0.75cm}
+  {\large\itshape \theauthor\par}
+  \vspace{0.5cm}
+  % \Fbox{
+  \begin{minipage}{0.95\textwidth} % t -> alinear hacia arriba (top).
+    \itshape\small
+    % \Fbox{
+    \begin{minipage}[t]{0.49\textwidth}
+      \begin{flushleft}
+        \begin{itemize}[align=left]
+          \item [\textbf{Institución:}] IES Ar\-ce\-bis\-po Xel\-mí\-rez I.
+        \end{itemize}
+      \end{flushleft}
+    \end{minipage}
+    % }
+    \hfill
+    % \Fbox{
+    \begin{minipage}[t]{0.45\textwidth}
+      \begin{flushright}
+        \itshape
+        % {\raggedleft\itshape \textbf{Tutor:} \theUniTuthor\par}
+        % {\raggedleft\itshape \textbf{Tutor externo:} \theExtTuthor\par}
+
+        \begin{itemize}[align=right, itemindent=4em]
+          \item [\textbf{Tutor:}] \theUniTuthor
+          \item [\textbf{Tutor externo:}] \theExtTuthor
+        \end{itemize}
+      \end{flushright}
+    \end{minipage}
+    % }
+  \end{minipage}
+% }
+  \vfill
+% Bottom of the page
+  {\large \thelocation\ \today\par}
+\end{titlepage}
+}
+\makeatother
+
+\usepackage{titling}
+\author{Manuel C. Piñeiro Mourazos}
+\title{Love}
+\location{Vigo}
+
+
+
+\begin{document}
+
+\makeCover
+
+\end{document}

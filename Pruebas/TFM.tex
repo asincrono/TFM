@@ -1,8 +1,70 @@
-\documentclass{scrreprt}
-\usepackage{hyperef}
+\documentclass[titlepage,twoside,chapterprefix]{scrbook}
+
+\usepackage{polyglossia}
+\setmainlanguage{spanish}
+
+\setmainfont{Linux Libertine O}
+\setsansfont{Linux Biolinum O}
+\setmonofont[
+  Contextuals={Alternate}
+]{Fira Code}
+\makeatletter % Para obtener las ligaduras adecuadas de "Fira Code".
+\def\verbatim@nolig@list{}
+\makeatother
+
+\usepackage[automark, headsepline, olines]{scrlayer-scrpage}
+% \lohead[Odd page left heading]{Odd page left heading}
+
+% \rehead[\leftmark]{Even page right heading}
+% \lofoot[\pagemark]{Odd page left footer}
+
+% \rofoot[ROFoot]{Odd page right footer}
+\pagestyle{scrheadings}
+\automark[chapter]{chapter}
+\automark*[section]{}
+\KOMAoption{headsepline}{.4pt:0.75\textwidth}
+
+\renewcommand\chapterlineswithprefixformat[3]{%
+  \parbox[b]{\textwidth}{\hrulefill}\par%
+  #2#3\par\bigskip
+  \hrule}
+
+\usepackage{graphicx}
+
+\usepackage{pdfpages}
+
+\usepackage{lettrine}
+\renewcommand{\LettrineTextFont}{\mdseries}
+
+\usepackage{titling} % Para hacer referencia al título y al autor en la portada.
+\author{Manuel C. Piñeiro Mourazos}
+\title{TFM}
+\subtitle{Un trabajo que valga la pena}
+
+\usepackage{blindtext}
+\usepackage{lipsum}
+
+\usepackage{hyperref}
+\hypersetup{ % Nos permite especificar los colores con que se mostrarán los distintos tipos de link dentro del documento.
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,
+    urlcolor=cyan,
+    citecolor=BlueViolet
+}
+
 
 \begin{document}
+
+\includepdf{cover/cover.pdf}
+\setcounter{page}{0}
+
+\frontmatter
+
+\maketitle
 \tableofcontents
+
+\mainmatter
 
 \include{chapters/introduccion/introduccion}
 

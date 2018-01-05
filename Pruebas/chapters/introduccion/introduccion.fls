@@ -1,0 +1,6 @@
+PWD /Users/asincrono/GitHub/TFM/Pruebas/chapters/introduccion
+INPUT /usr/local/texlive/2017/texmf.cnf
+INPUT /usr/local/texlive/2017/texmf-dist/web2c/texmf.cnf
+INPUT /usr/local/texlive/2017/texmf-var/web2c/xetex/xelatex.fmt
+INPUT introduccion.tex
+OUTPUT introduccion.log
